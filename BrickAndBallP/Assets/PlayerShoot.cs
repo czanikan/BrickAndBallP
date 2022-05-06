@@ -24,7 +24,7 @@ public class PlayerShoot : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.Space) && round)
         {
             round = false;
-            //StartCoroutine(Shoot());
+            StartCoroutine(Shoot());
         }
         if (round)
         {
@@ -48,7 +48,11 @@ public class PlayerShoot : MonoBehaviour
     {
         for(int i = 0; i < ammoAmount; i++)
         {
-
+            GameObject Bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity, transform);
+            Vector2 force = new Vector2(shootDirection.x, shootDirection.y).normalized * 3 * speed;
+            Bullet.GetComponent<Rigidbody2D>().velocity = force;
+            currentAmmo--;
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }
