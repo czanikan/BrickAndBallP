@@ -53,9 +53,11 @@
     <UnityVersion>2020.3.26f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\CameraCollider.cs" />
     <Compile Include="Assets\Bullet.cs" />
     <Compile Include="Assets\PlayerShoot.cs" />
+    <Compile Include="Assets\CameraCollider.cs" />
+    <Compile Include="Assets\BlockScript.cs" />
+    <Compile Include="Assets\GUIScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
